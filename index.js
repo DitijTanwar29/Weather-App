@@ -178,12 +178,12 @@ async function fetchSearchWeatherInfo(city) {
 
             loadingScreen.classList.remove("active"); //removing loading gif from UI
             
+            renderWeatherInfo(data); //displaying the recieved json format data on UI by passing
             notFoundContainer.classList.remove("active");
             image.classList.remove("active");
             userInfoContainer.classList.add("active");
-            renderWeatherInfo(data); //displaying the recieved json format data on UI by passing
             // data as argument in  render function to show that recieved data
-            console.log("data is ",data);
+            // console.log("data is ",data);
 
         }
         else {
@@ -192,8 +192,8 @@ async function fetchSearchWeatherInfo(city) {
             userInfoContainer.classList.remove("active");
             notFoundContainer.classList.add("active");
             image.classList.add("active");
+            searchForm.classList.remove("active");
         }
-        
     }
     catch(err) {
         console.log("Error Occur, try another city");
